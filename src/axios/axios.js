@@ -12,7 +12,7 @@ const weatherURL = () => {
 let countryCode = 'us'
 let zipCode = 80014;
 let coordinateURL = () => {
-  return `http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${APIKey}`
+  return `https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${APIKey}`
 } 
 
 let zipCodeKey = '6e1afc0c0a1846eeab97006a0cbab847'
