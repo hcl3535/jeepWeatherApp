@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+html{
+  background-color: #26b7f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.border{
+  border: 2px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.border-radius-1 {
+  border-radius: 1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.border-radius-0{
+  border-radius: .5em;
+}
+
+.flex{
   display: flex;
+}
+
+.flex-column{
   flex-direction: column;
+}
+
+.z-order-1{
+  z-index: 1;
+}
+
+.horizontalCentered{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.imgCenter{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 3em;
+}
+
+.relative{
+  position: relative;
+}
+
+.size{
+  width: 95vw
+}
+
+.margin{
+  margin: 1vw;
+}
+
+.selected{
+  width: 90vw;
+  height: 40vh;
+  background: var(--main-bg-color);
+}
+
+.selected > div {
+  flex-grow: 1;
+}
+
+.imgSize {
+  width: 60vw;
+}
+
+.rainy-background{
+  background: linear-gradient(to bottom, #13636e, #26b7f5);
+}
+
+.sunny-background {
+  background: linear-gradient(to bottom, #daf469, #26b7f5);
+}
+
+.cloudy-background {
+  background: linear-gradient(to bottom, #78a1a6, #26b7f5);
+}
+
+.snowy-background {
+  background: linear-gradient(to bottom, #aae7ef, #26b7f5);
+}
+
+.title {
+  font-size: 2.5em;
+}
+
+.selectedDay-item{
+  font-size: 1.5em;
+}
+
+.margin-top-5 {
+  margin-top: 5vh;
+}
+
+.margin-left-5{
+  margin-left: 5vw;
+}
+
+.margin-left-2{
+  margin-left: 2vw;
+}
+
+.rain-snow-icon{
+  width: 7vw;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+* {
+  font-family: "Raleway";
+  box-sizing: border-box;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#menu-toggle {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: #26b7f500;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 12em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(47, 47, 47);
+    flex-direction: column;
+  }
+
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
   }
 }
+
