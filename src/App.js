@@ -5,6 +5,7 @@ import NavBar from './navBar';
 import { makeValuesUseable, setBackGroundColor, setBackgroundColor, setBackgroundColorForSelected, setDefaultPreferences } from './helperFunctions';
 import SelectedDay from './selectedDay';
 import SevenDayForcast from './SevenDayForcast';
+import Hourly from './hourly';
 
 function App() {
 
@@ -19,12 +20,12 @@ useEffect(() => {
     const locationData = await getCoordinates(preferences.zip)
     setCity(locationData.name)
     const data = await getWeatherData()
+    console.log(data)
     makeValuesUseable(data)
     setCurrentWeatherData(data)
     setSelectedDay(data.daily[0])
     setBackGroundColor(data.daily[0])
     navigator.geolocation.getCurrentPosition(async(event) => {
-      console.log(event)
       updateBasedOnPermisiveLocation(event)
     }, console.log)
   }
@@ -61,6 +62,7 @@ useEffect(() => {
       <NavBar preferences={preferences} changePreferences={changePreferences} city={city}/>
       <SelectedDay selectedDay={selectedDay} preferences={preferences}/>
       <SevenDayForcast currentWeatherData={currentWeatherData} changeSelectedDay={changeSelectedDay}/>
+      <Hourly currentWeatherData={currentWeatherData}/>
     </div>
   );
 }

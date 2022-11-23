@@ -51,8 +51,6 @@ export const getFullDaysName = (day) => {
   if(day.dt === 'Wed') return 'Wednsday'
   if(day.dt === 'Thu') return 'Thursday'
   if(day.dt === 'Fri') return 'Friday'
-  if(day.dt === 'Sat') return 'Saterday'
+  if(day.dt === 'Sat') return 'Saturday'
   if(day.dt === 'Sun') return 'Sunday'
 }
-
-  

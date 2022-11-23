@@ -43,11 +43,24 @@ html{
 }
 
 .size{
-  width: 95vw
+  width: 90vw
+}
+
+.hourly-size{
+  width: 90vw;
+  height: 15vh;
+}
+
+.overflow-scroll{
+  overflow: scroll;
 }
 
 .margin{
   margin: 1vw;
+}
+
+.margin-top-2 {
+  margin-top: 2vh;
 }
 
 .selected{
@@ -82,6 +95,10 @@ html{
 
 .title {
   font-size: 2.5em;
+}
+
+.time-size{
+  font-size: 1.5em;
 }
 
 .selectedDay-item{

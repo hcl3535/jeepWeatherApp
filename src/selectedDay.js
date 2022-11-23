@@ -21,7 +21,6 @@ const SelectedDay = (props) => {
     element.classList.add(condition)
     let fullDaysName = getFullDaysName(selectedDay)
     if(condition === 'snowy-background') weatherIcon = snowFlake;
-    console.log(condition)
 
       return(
         <div className={`flex border horizontalCentered selected border-radius-1 flex-column`}>

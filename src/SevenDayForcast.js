@@ -7,7 +7,7 @@ const SevenDayForcast = (props) =>{
 
     if(currentWeatherData.daily){
       return(
-        <div className='flex size horizontalCentered'>
+        <div className='flex size horizontalCentered margin-top-2'>
           {currentWeatherData?.daily.map((day, index) => {
             if(index > 6) return null
             let condition = setBackGroundColor(day)
