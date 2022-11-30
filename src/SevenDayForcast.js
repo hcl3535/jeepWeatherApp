@@ -15,10 +15,10 @@ const SevenDayForcast = (props) =>{
               <div key={index} className={`border horizontalCentered margin border-radius-0 ${condition}`} onClick={() =>{
                 changeSelectedDay(day)
                 }}> 
-                <div className="horizontalCentered">{day.dt}</div>
-                <div className="horizontalCentered">high {day.temp.max}</div>
-                <div className="horizontalCentered">low {day.temp.min}</div>
-                <div className="horizontalCentered">{day.pop}%</div>
+                <div className="horizontalCentered margin-left-2">{day.dt}</div>
+                <div className="horizontalCentered margin-top-1 margin-left-2">{day.temp.max}&#8457;</div>
+                <div className="horizontalCentered margin-left-2">{day.temp.min}&#8457;</div>
+                <div className="horizontalCentered margin-top-1 margin-left-2">{day.pop}%</div>
               </div>
             )
           })} 

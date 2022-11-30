@@ -54,3 +54,25 @@ export const getFullDaysName = (day) => {
   if(day.dt === 'Sat') return 'Saturday'
   if(day.dt === 'Sun') return 'Sunday'
 }
+
+export const makeHourlyUsable = (hour, index) => {
+  if(index > 23) return null
+    hour.dt = new Date(hour.dt * 1000).toString().slice(16,18)
+    let time
+    let ender = 'AM'
+    if(hour.dt === '0'){
+      time = hour.dt.slice(1)
+    } else {
+      time = hour.dt
+    }
+      time = Number(time)
+    if(time > 12){
+      time -= 12
+      ender = 'PM'
+    }
+    if(time === 0){
+      time = 12
+    }
+  hour.ender = ender
+  return time  
+}

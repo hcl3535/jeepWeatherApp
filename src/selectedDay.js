@@ -25,13 +25,18 @@ const SelectedDay = (props) => {
       return(
         <div className={`flex border horizontalCentered selected border-radius-1 flex-column`}>
           <div>
-            <div className="horizontalCentered title">{fullDaysName}</div>
-            <div className="margin-top-5 margin-left-5">
-              <div className="selectedDay-item margin-left-2">{selectedDay.temp.max}&#8457;</div>
-              <div className="selectedDay-item margin-left-2">{selectedDay.temp.min}&#8457;</div>
-              <div className="flex-row flex">
-                <img src={weatherIcon} alt='' className="rain-snow-icon"></img>
-                <div className="selectedDay-item">{selectedDay.pop}%</div>
+          <div className="horizontalCentered title">{fullDaysName}</div>
+            <div className="flex-row flex justify-content">
+              <div className="margin-top-5 margin-left-5">
+                <div className="selectedDay-item margin-left-2">{selectedDay.temp.max}&#8457;</div>
+                <div className="selectedDay-item margin-left-2">{selectedDay.temp.min}&#8457;</div>
+                <div className="flex-row flex">
+                  <img src={weatherIcon} alt='' className="rain-snow-icon"></img>
+                  <div className="selectedDay-item">{selectedDay.pop}%</div>
+                </div>
+              </div>
+              <div className="margin-right-13 margin-top-3">
+                <img src={`http://openweathermap.org/img/wn/${selectedDay.weather[0].icon}@2x.png`}></img>
               </div>
             </div>
           </div>

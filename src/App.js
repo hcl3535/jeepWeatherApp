@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getCoordinates, getWeatherData, getZipFromLatAndLon, UpdateLatAndLon } from './axios/axios';
-import NavBar from './navBar';
+import Settings from './settings';
 import { makeValuesUseable, setBackGroundColor, setBackgroundColor, setBackgroundColorForSelected, setDefaultPreferences } from './helperFunctions';
 import SelectedDay from './selectedDay';
 import SevenDayForcast from './SevenDayForcast';
 import Hourly from './hourly';
+import NavBar from './NavBar';
 
 function App() {
 
@@ -20,7 +21,6 @@ useEffect(() => {
     const locationData = await getCoordinates(preferences.zip)
     setCity(locationData.name)
     const data = await getWeatherData()
-    console.log(data)
     makeValuesUseable(data)
     setCurrentWeatherData(data)
     setSelectedDay(data.daily[0])
@@ -59,10 +59,11 @@ useEffect(() => {
 
   return (
     <div id='base'>
-      <NavBar preferences={preferences} changePreferences={changePreferences} city={city}/>
+      <Settings preferences={preferences} changePreferences={changePreferences} city={city}/>
       <SelectedDay selectedDay={selectedDay} preferences={preferences}/>
       <SevenDayForcast currentWeatherData={currentWeatherData} changeSelectedDay={changeSelectedDay}/>
       <Hourly currentWeatherData={currentWeatherData}/>
+      <NavBar/>
     </div>
   );
 }

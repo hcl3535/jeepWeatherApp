@@ -43,7 +43,9 @@ html{
 }
 
 .size{
-  width: 90vw
+  width: 92vw;
+  height: 13vh;
+  max-width: ;
 }
 
 .hourly-size{
@@ -55,12 +57,32 @@ html{
   overflow: scroll;
 }
 
+.text-align-center{
+  text-align: center;
+}
+
 .margin{
   margin: 1vw;
 }
 
+.margin-left-2{
+  margin-left:2vw;
+}
+
+.margin-top-1 {
+  margin-top: 1.5vh;
+}
+
 .margin-top-2 {
   margin-top: 2vh;
+}
+
+.margin-top-3{
+  margin-top: 3vh;
+}
+
+.margin-right-13{
+  margin-right: 13vw;
 }
 
 .selected{
@@ -69,8 +91,50 @@ html{
   background: var(--main-bg-color);
 }
 
+.container{
+  position: relative;
+  display: flex;
+}
+
+.NavBar{
+  position: absolute;
+  bottom: 0;
+}
+.Nav-Item {
+  width:50vw;
+  height:5vh;
+  margin: 0;
+  
+}
+
+.NavBar > :nth-child(1) {
+  border-top-left-radius: .3em;
+}
+
+.NavBar > :nth-child(2) {
+  border-top-right-radius: .3em;
+}
+
+
+
+.float-right{
+  float: right;
+}
+
+.justify-content{
+  justify-content: space-between;
+}
+
+.order{
+  order:-1;
+}
+
 .selected > div {
   flex-grow: 1;
+}
+
+.justify-content{
+  justify-content: space-between;
 }
 
 .imgSize {
@@ -82,7 +146,7 @@ html{
 }
 
 .sunny-background {
-  background: linear-gradient(to bottom, #daf469, #26b7f5);
+  background: linear-gradient(to bottom, #e1f38f, #26b7f5);
 }
 
 .cloudy-background {
@@ -99,6 +163,10 @@ html{
 
 .time-size{
   font-size: 1.5em;
+}
+
+.font-size-med {
+  font-size: 1.4em;
 }
 
 .selectedDay-item{
@@ -119,6 +187,10 @@ html{
 
 .rain-snow-icon{
   width: 7vw;
+}
+
+.vertical-centered{
+  margin: auto;
 }
 
 html, body {
