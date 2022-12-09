@@ -1,13 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import TrailGuide from './TrailGuide';
+import NavBar from './navBar';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path='/'element={<App/>}/>
+      <Route path='/trailGiude' element={<TrailGuide/>}/>
+    </Routes>
+    <NavBar/>
   </BrowserRouter>
 );
 

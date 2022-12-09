@@ -6,7 +6,8 @@ import { makeValuesUseable, setBackGroundColor, setBackgroundColor, setBackgroun
 import SelectedDay from './selectedDay';
 import SevenDayForcast from './SevenDayForcast';
 import Hourly from './hourly';
-import NavBar from './NavBar';
+import NavBar from './navBar';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
 
@@ -58,13 +59,12 @@ useEffect(() => {
  }
 
   return (
-    <div id='base'>
-      <Settings preferences={preferences} changePreferences={changePreferences} city={city}/>
-      <SelectedDay selectedDay={selectedDay} preferences={preferences}/>
-      <SevenDayForcast currentWeatherData={currentWeatherData} changeSelectedDay={changeSelectedDay}/>
-      <Hourly currentWeatherData={currentWeatherData}/>
-      <NavBar/>
-    </div>
+      <div id='base'>
+        <Settings preferences={preferences} changePreferences={changePreferences} city={city}/>
+        <SelectedDay selectedDay={selectedDay} preferences={preferences}/>
+        <SevenDayForcast currentWeatherData={currentWeatherData} changeSelectedDay={changeSelectedDay}/>
+        <Hourly currentWeatherData={currentWeatherData}/>
+      </div>
   );
 }
 
