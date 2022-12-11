@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-let APIKey ='b8475f259148eaa3b32c2d166d2076c7'
+let APIKey = process.env.REACT_APP_API_KEY
 
 let lat = 32.975540
 let lon = -96.889793
@@ -15,7 +15,7 @@ let coordinateURL = () => {
   return `https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${APIKey}`
 } 
 
-let zipCodeKey = '6e1afc0c0a1846eeab97006a0cbab847'
+let zipCodeKey = process.env.REACT_APP_ZIP_API_KEY
 let zipCodeURL = () => {
   return `https://api.opencagedata.com/geocode/v1/json?q=${lat}%2C+${lon}&key=${zipCodeKey}&pretty=1`
 }

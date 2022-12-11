@@ -1,4 +1,8 @@
 import SevenDayForcast from "./SevenDayForcast"
+import sunIcon from './photos/sunIcon.png'
+import snowingIcon from './photos/snowingIcon.png'
+import rainyIcon from './photos/rainyIcon.png'
+import cloudyIcon from './photos/cloudyIcon.png'
 
 export const reconfigureRainChance = (pop) => {
   let rainChance = 0
@@ -75,4 +79,20 @@ export const makeHourlyUsable = (hour, index) => {
     }
   hour.ender = ender
   return time  
+}
+
+export const setWeatherIcon = (day) => {
+  let description = day.weather[0].main
+  if(description === 'Rain'){
+    return rainyIcon
+  }
+  if(description === 'Clouds'){
+    return cloudyIcon
+  }
+  if(description === 'Clear') {
+    return sunIcon
+  }
+  if(description === 'Snow') {
+    return snowingIcon
+  }
 }

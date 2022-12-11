@@ -43,9 +43,13 @@ html{
 }
 
 .size{
-  width: 92vw;
-  height: 13vh;
-  max-width: ;
+  width: 94vw;
+  height: 14vh;
+}
+
+.item {
+  max-width: 11.5vw;
+  min-width: 11.5vw;
 }
 
 .hourly-size{
@@ -81,8 +85,8 @@ html{
   margin-top: 3vh;
 }
 
-.margin-right-13{
-  margin-right: 13vw;
+.margin-right-5{
+  margin-right: 5vw;
 }
 
 .selected{
@@ -183,6 +187,13 @@ html{
 
 .margin-left-2{
   margin-left: 2vw;
+}
+.margin-left-1-5 {
+  margin-left: 1.5vw;
+}
+
+.margin-left-1 {
+  margin-left: 1.2vw;
 }
 
 .rain-snow-icon{

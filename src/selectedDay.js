@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { comparePreferences, getFullDaysName, setBackGroundColor } from "./helperFunctions";
+import { comparePreferences, getFullDaysName, setBackGroundColor, setWeatherIcon } from "./helperFunctions";
 import jeepTopOff from './photos/jeepTopOff.png'
 import jeepTopOn from'./photos/jeepTopOn.png'
 import rainDrop from './photos/rain drop 1.png'
 import snowFlake from './photos/snowflake hunter1.png'
+
 
 const SelectedDay = (props) => {
     
@@ -16,6 +17,7 @@ const SelectedDay = (props) => {
     if(comparePreferences(preferences, selectedDay)) photo = jeepTopOff
 
     let condition = setBackGroundColor(selectedDay)
+    let bigWeatherIcon = setWeatherIcon(selectedDay)
     let element = document.getElementById('base')
     element.className = ''
     element.classList.add(condition)
@@ -35,8 +37,8 @@ const SelectedDay = (props) => {
                   <div className="selectedDay-item">{selectedDay.pop}%</div>
                 </div>
               </div>
-              <div className="margin-right-13 margin-top-3">
-                <img src={`http://openweathermap.org/img/wn/${selectedDay.weather[0].icon}@2x.png`}></img>
+              <div className="margin-right-5 margin-top-3">
+                <img src={bigWeatherIcon}></img>
               </div>
             </div>
           </div>
