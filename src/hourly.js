@@ -12,7 +12,7 @@ const Hourly = (props) => {
     console.log(currentWeatherData)
 
     return (
-        <div className="flex border border-radius-1 hourly-size horizontalCentered margin-top-2 overflow-scroll">
+        <div className="flex border border-radius-1 hourly-size horizontalCentered margin-top-2 overflow-scroll relative">
             {hours?.map((hour, index) => {
                 hour.dt = makeHourlyUsable(hour, index)
                 hour.pop = reconfigureRainChance(hour.pop)
@@ -21,15 +21,15 @@ const Hourly = (props) => {
                 if(condition === 'snowy-background') weatherIcon = snowFlake;
                 if(index > 23) return null
                 return(
-                    <div key={index} className="margin margin-left-2">
+                    <div key={index} className="margin margin-left-2 hourly-item">
                         <div className="time-size">
                             {hour.dt}{hour.ender}
                         </div>    
-                        <div className="flex font-size-med margin-top-2">
+                        <div className="flex font-size-med margin-top-2 hourly-item">
                             <img src={weatherIcon} className="rain-snow-icon"></img>
                             {hour.pop}%
                         </div>
-                        <div className="horizontalCentered font-size-med margin-left-2 margin-top-2">
+                        <div className="horizontalCentered font-size-med margin-left-2 margin-top-2 hourly-item">
                           {hour.temp}&#8457;
                         </div>  
                     </div>  

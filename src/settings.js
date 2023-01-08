@@ -32,11 +32,11 @@ const Settings = (props) => {
     <label className='menu-button-container' htmlFor="menu-toggle">
     <div className='menu-button'></div>
   </label>
-    <ul className="menu">
+    <ul className="menu z-4">
       <li>
         <div className="horizontalCentered">preferences</div>
         <div>
-            <div>pop</div>
+            <div>chance of rain</div>
             <input type='textbox' onChange={handlePopChange} value={popPreference}></input>
         </div>
         <div>

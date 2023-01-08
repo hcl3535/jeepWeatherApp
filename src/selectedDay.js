@@ -25,7 +25,7 @@ const SelectedDay = (props) => {
     if(condition === 'snowy-background') weatherIcon = snowFlake;
 
       return(
-        <div className={`flex border horizontalCentered selected border-radius-1 flex-column`}>
+        <div className={`flex border horizontalCentered selected border-radius-1 flex-column relative`}>
           <div>
           <div className="horizontalCentered title">{fullDaysName}</div>
             <div className="flex-row flex justify-content">
@@ -37,8 +37,8 @@ const SelectedDay = (props) => {
                   <div className="selectedDay-item">{selectedDay.pop}%</div>
                 </div>
               </div>
-              <div className="margin-right-5 margin-top-3">
-                <img src={bigWeatherIcon}></img>
+              <div>
+                <img src={bigWeatherIcon} className="bigWeatherIcon"></img>
               </div>
             </div>
           </div>
